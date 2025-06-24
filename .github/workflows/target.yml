@@ -1,1 +1,13 @@
+# .github/workflows/target.yml
+name: Target Workflow
+
+on:
+  repository_dispatch:
+    types: [custom-trigger]
+
+jobs:
+  respond:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎯 Triggered externally!"
 
