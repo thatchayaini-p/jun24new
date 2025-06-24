@@ -1,0 +1,14 @@
+# .github/workflows/matrix-parent.yml
+name: Matrix Parent
+
+on:
+  push:
+
+jobs:
+  run-matrix:
+    strategy:
+      matrix:
+        name: [Alice, Bob]
+    uses: ./.github/workflows/child.yml
+    with:
+      name: ${{ matrix.name }}
